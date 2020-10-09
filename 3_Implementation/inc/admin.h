@@ -13,7 +13,8 @@
 * @note Notes
 */
 
-int admin(char yesorno);
-int admin_add_voter(char loginun[],char loginpw[]);
-int admin_remove_voter(char loginun[]);
-#endif /* #ifndef __ANNOUNCE_H__ */
+void adminfun();
+int addvoter(char loginunarg[],char loginpwarg[]);
+int removevoter(char loginunarg[]);
+int cstate(char yesorno);
+#endif /* #ifndef __ADMIN_H__ */
