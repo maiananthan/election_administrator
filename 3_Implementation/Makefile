@@ -10,6 +10,8 @@ src/admin.c\
 src/voter.c\
 src/functions.c
 
+PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME).out
+
 # All test source files
 TEST_SRC = test/test.c\
 src/admin.c\
@@ -24,12 +26,10 @@ INC	= -Iinc\
 -Iunity\
 -Itest
 
-PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME).out
-
 # Document files
 DOCUMENTATION_OUTPUT = documentation/html
 
-# Default target built
+# Target built
 $(PROJECT_NAME):project
 $(TEST_NAME):test
 
@@ -39,13 +39,13 @@ $(TEST_NAME):test
 project: $(SRC) $(BUILD)
 	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT)
 
-# Call `make run` to run the application
+# Call `make runproject` to run the application
 runproject:$(PROJECT_NAME)
 	./$(PROJECT_OUTPUT)
 
 # Document the code using Doxygen
-#doc:
-#	make -C ./documentation
+doc:
+	make -C ./documentation
 
 # Build and run the unit tests
 test:$(TEST_SRC) $(BUILD)
