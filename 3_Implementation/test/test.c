@@ -72,7 +72,8 @@ void test_cast_vote(void)
 	TEST_ASSERT_EQUAL(1,polling("voter008","voter012"));
 	TEST_ASSERT_EQUAL(1,polling("voter009","voter008"));
 	TEST_ASSERT_EQUAL(1,polling("voter010","voter008"));
-	TEST_ASSERT_EQUAL(1,polling("voter011","voter002"));		
+	TEST_ASSERT_EQUAL(1,polling("voter011","voter002"));
+	TEST_ASSERT_EQUAL(1,polling("voter012","voter012"));	
 }
 void test_cast_vote_again(void)
 {
@@ -85,7 +86,7 @@ void test_change_polling_state_to_normal_state(void)
 }
 void test_results(void)
 {
-	TEST_ASSERT_EQUAL(4,normal());
+	TEST_ASSERT_EQUAL(5,normal());
 }
 int main(void)
 {
