@@ -1,2 +1,2 @@
 # electionadministrator
- Election Administrator is designed to work as manual election administrator 
+ Election Administrator is a software designed to function in same way as manual election administrator works.
