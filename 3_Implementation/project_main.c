@@ -8,75 +8,26 @@
 #include "admin.h"
 #include "voter.h"
 
-char userid[30],userpw[30];
-void adminfun();
 int main()
 {
-    int i,j,status=0;//aov=0;
-
-    char *weln,loginun[20],loginpw[20],*weln1,*weln0;
-    weln = (char*)malloc (200);
-    weln = strcpy(weln,"Welcome to the election system");
-    weln0 = (char*)malloc (200);
-    weln0 = strcpy(weln0,"\n  - - - - - LOGIN - - - - - \nEnter your User Name: ");
-    weln1 = (char*)malloc (200);
-    weln1=strcpy(weln1,"\nEnter Password: ");
-    for(i=0;i<strlen(weln);i++)
-    {
-       //delay(1);
-        printf("%c",weln[i]);                               //printing welcome note
-    }
+    int i,j,status=0;
+    char loginun[20],loginpw[20];
+    printf("\n   Welcome to the election system   ");                               
     loginpage:
-    //login:                                                 //getting login page
-    for(i=0;i<strlen(weln0);i++)
-    {
-        //delay(1);
-        printf("%c",weln0[i]);                              //printing username
-    }
+    printf("\n\n     - - - - - LOGIN - - - - -    \n\n Enter your User Name : ");
     scanf("%s",&loginun);
-    for(i=0;i<strlen(weln1);i++)
+    printf(" Enter Password       : ");
+    scanf("%s",&loginpw);                                  
+    if(status=logincheck(loginun,loginpw))
     {
-        //delay(1);
-        printf("%c",weln1[i]);                              //printing username
-    }
-    scanf("%s",&loginpw);                                  //getting login username
-    if(status=logincheck(loginun,loginpw))                             //checking for username
-    {
-        printf("LOGIN SUCCESSFULL\n\n");
-        for(j=0;j<strlen(weln1);j++)
-        {
-            //delay(1);
-            //printf("%c",weln1[j]);                           //printing login password
-        }
-        //scanf("%s",&loginpw);                              //getting login password
-        //if(loginpwcheck(loginpw))
-        //{
-//        printf("%d",aov);
-            if(status==2)
-            {
-                adminfun();
-                //printf("admin00");
-            }
-            else if (status==1)
-            {
-                //printf("voter");
-               votersfun();
-            }
-        //}
-
+        printf("\n         LOGIN SUCCESSFULL   \n\n");
+        if(status==2)
+        	adminfun();
+        else if (status==1)
+            votersfun();
     }
     else
-        {
-            printf("Credentials are incorrect :(");
-            //goto loginpage;
-            //goto loginpw;
-        }/*
-    else
-    {
-        printf("User Name doesn't exist :((");
-        goto login;
-    }
-*/
+    	printf("   Credentials are incorrect :(");
     goto loginpage;
     return 0;
 }

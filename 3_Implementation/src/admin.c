@@ -2,11 +2,15 @@
 #include <stdio.h>
 #include <string.h>
 #include "admin.h"
-FILE *fileptr,*fileptr1,*fileptr2,*fileptr3,*fileptraddvoter;static char op; static char state;
+
+FILE *fileptr,*fileptr1,*fileptr2,*fileptr3,*fileptraddvoter;
+static char op; 
+static char state;
 int statev,found=0,statech;
 char loginv[30],loginvpw[30];
 struct unpw voter;
 struct polled polls;
+
 struct polled
 {
     char pollun[30];
@@ -18,6 +22,8 @@ struct unpw
     char loginpw[30];
     int aovv;
 };
+
+
 int addvoter(char loginunarg[],char loginpwarg[])
 {
     int flag=0;
@@ -99,7 +105,6 @@ int removevoter(char loginunarg[])
         printf("File can't be opened\n");
         exit(1);
     }
-   /// printf("Enter the username to remove : ");scanf("%s",loginv);
 
     while(fread(&voter,sizeof(struct unpw),1,fileptr))
     {
@@ -135,7 +140,6 @@ else if (statech==2 || statech==0)
 int cstate(char yesorno)
 {
     int flag=10;
-    ///=======================================================================================
     if(yesorno=='y')
     {
         fileptr=fopen("state.txt","r");
@@ -191,9 +195,11 @@ void displayvoters()
     }
     fclose(fileptr2);
 }
-void adminfun(void)
+
+void adminfun()
 {
-    int option,status;char loginunarg[30],loginpwarg[30];
+    int option,status;
+    char loginunarg[30],loginpwarg[30];
     adminpage:
     printf("   1 . . . ADD VOTER\n   2 . . . REMOVE VOTER\n   3 . . . CHANGE THE STATE\n   4 . . . SEE VOTERS LIST\n   5 . . . EXIT\nEnter your option : ");
     scanf("%d",&option);
@@ -293,7 +299,7 @@ void adminfun(void)
             }
         }
         case 3:
-        { ///========================================================================================
+        { 
             fileptr=fopen("state.txt","r");
             fscanf(fileptr,"%d",&statev);
             fclose(fileptr);

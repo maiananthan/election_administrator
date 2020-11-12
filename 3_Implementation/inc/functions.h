@@ -7,10 +7,10 @@
 #define __FUNCTIONS_H__
 
 /**
-* Functions like login to the system
-* @param[in] login credentials
-* @return confirmation if if credentials are correct
-* @note Notes
+* Function for login to the system using login username and password
+* @param[in] login credentials --> login username & login password
+* @return confirmation if credentials are correct
+* @note
 */
 
 int logincheck(char loginun[],char loginpw[]);

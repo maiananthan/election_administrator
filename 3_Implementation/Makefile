@@ -13,7 +13,7 @@ src/functions.c
 PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME).out
 
 # All test source files
-TEST_SRC = test/test.c\
+TEST_SRC = test/test_main.c\
 src/admin.c\
 src/voter.c\
 src/functions.c\
@@ -30,17 +30,17 @@ INC	= -Iinc\
 DOCUMENTATION_OUTPUT = documentation/html
 
 # Target built
-$(PROJECT_NAME):project
-$(TEST_NAME):test
+$(PROJECT_NAME):all
+$(TEST_NAME):runtest
 
 # Run the target even if the matching name exists
 .PHONY: run clean test  doc all
 
-project: $(SRC) $(BUILD)
+all: $(SRC) $(BUILD)
 	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT)
 
-# Call `make runproject` to run the application
-runproject:$(PROJECT_NAME)
+# Call `make run` to run the application
+run:$(PROJECT_NAME)
 	./$(PROJECT_OUTPUT)
 
 # Document the code using Doxygen
@@ -48,11 +48,11 @@ doc:
 	make -C ./documentation
 
 # Build and run the unit tests
-test:$(TEST_SRC) $(BUILD)
+runtest:$(TEST_SRC) $(BUILD)
 	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT)
 
-# Call `make runtest` to run the unit test application
-runtest:$(TEST_NAME)
+# Call `make test` to run the unit test application
+test:$(TEST_NAME)
 	./$(TEST_OUTPUT)
 	
 # Remove all the built files, invoke by `make clean`

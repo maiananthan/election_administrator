@@ -1,10 +1,11 @@
-#include"functions.h"
+#include "functions.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
 #include <conio.h>
 #include <unistd.h>
+
 FILE *fileptr;
 struct unpw details;
 int flag=0;
@@ -33,7 +34,6 @@ int logincheck(char loginun[],char loginpw[])
             {
                 flag=details.aovv;
                 strcpy(cloginun,details.loginun);
-
                 break;
             }
         }

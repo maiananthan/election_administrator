@@ -3,7 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 FILE *fileptr,*fileptr1,*fileptr2,*fileptr3,*fileptr4,*fileptr5,*fileptr6,*fileptrcc,*fileptrmax;
-int statevoter, contests=0,voted,i,j,k,contestcount;char an,votervote[30];extern char cloginun[30];
+int statevoter, contests=0,voted,i,j,k,contestcount;
+char an,votervote[30];
+extern char cloginun[30];
+
 struct candd
 {
     char contestun[30];
@@ -170,11 +173,11 @@ void votersfun()
             {
                 printf("\n - - - Normal State - - - \n      - RESULTS -     \n");
                 status=normal();
-                printf("User Name     Votes");
+                printf("\n     User Name       Votes\n     - - - - - - - - - - - ");
                 fileptrcc=fopen("results.dat","r");
                 while(fread(&candidate,sizeof(struct candd),1,fileptrcc))
                 {
-                    printf("\n     %s       %d\n",candidate.contestun,candidate.vote_count);
+                    printf("\n     %s          %d",candidate.contestun,candidate.vote_count);
                 }
                 break;
             }
@@ -219,7 +222,7 @@ void votersfun()
                 }
                 else if(status==1)
                 {
-                    printf("You voted for %s",candidate.contestun);
+                    printf("You voted for %s",votervote);
                 }
                 break;
             }

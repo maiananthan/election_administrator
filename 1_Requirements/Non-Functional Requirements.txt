@@ -1,0 +1,4 @@
+1. Administrators and voters functions should not get interfaced.
+2. The software should be portable. So moving from one OS to other OS does not create any problem. 
+3. The structure of login credentials for both the administrators and the voters should remain same.
+4. The access of login credentils in future can be made easy.

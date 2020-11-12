@@ -1,0 +1,5 @@
+1. The software must allow admins/voters to login at any state of election.
+2. The software allows only the administrators to change the state of election at any time.
+3. Administrators are only allowed to add or remove voters from database.
+4. The voter details who is wishing to contest in the current election should not revealed before the polling state.
+5. The voters can only able to cast their vote for one time only per election.
