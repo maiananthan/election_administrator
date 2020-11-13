@@ -49,8 +49,8 @@ doc:
 	make -C ./documentation
 
 # Build and run the unit tests
-test:$(TEST_SRC) $(BUILD)
-	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT)
+test:$(TEST_SRC) $(BUILD) 
+	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) 
 	./$(TEST_OUTPUT)
 # Call `make test` to run the unit test application
 #test:$(TEST_NAME)
