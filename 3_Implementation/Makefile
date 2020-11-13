@@ -10,7 +10,6 @@ src/admin.c\
 src/voter.c\
 src/functions.c
 
-PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME).out
 
 # All test source files
 TEST_SRC = test/test_main.c\
@@ -26,17 +25,19 @@ INC	= -Iinc\
 -Iunity\
 -Itest
 
+PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME).out
+
 # Document files
 DOCUMENTATION_OUTPUT = documentation/html
 
 # Target built
 $(PROJECT_NAME):all
-$(TEST_NAME):runtest
+#$(TEST_NAME):runtest
 
 # Run the target even if the matching name exists
 .PHONY: run clean test  doc all
 
-all: $(SRC) $(BUILD) | 
+all: $(SRC) $(BUILD)
 	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT)
 
 # Call `make run` to run the application
@@ -48,12 +49,12 @@ doc:
 	make -C ./documentation
 
 # Build and run the unit tests
-runtest:$(TEST_SRC) $(BUILD)
+test:$(TEST_SRC) $(BUILD)
 	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT)
-
-# Call `make test` to run the unit test application
-test:$(TEST_NAME)
 	./$(TEST_OUTPUT)
+# Call `make test` to run the unit test application
+#test:$(TEST_NAME)
+#	./$(TEST_OUTPUT)
 	
 # Remove all the built files, invoke by `make clean`
 clean:
