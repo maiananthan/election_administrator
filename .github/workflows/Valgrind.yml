@@ -15,4 +15,4 @@ jobs:
     - name: make test
       run: |
         make test -C 3_Implementation/
-        valgrind ./3_Implementation/build/Test_ElectionAdministrator.out
+        valgrind ./3_Implementation/build/Test_Election_Administrator.out
