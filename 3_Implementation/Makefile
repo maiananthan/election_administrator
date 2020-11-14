@@ -1,5 +1,5 @@
 # Name of the project
-PROJECT_NAME = ElectionAdministrator
+PROJECT_NAME = Election_Administrator
 
 # Output directory
 BUILD = build
@@ -32,7 +32,6 @@ DOCUMENTATION_OUTPUT = documentation/html
 
 # Target built
 $(PROJECT_NAME):all
-#$(TEST_NAME):runtest
 
 # Run the target even if the matching name exists
 .PHONY: run clean test  doc all
@@ -52,10 +51,7 @@ doc:
 test:$(TEST_SRC) $(BUILD) 
 	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) 
 	./$(TEST_OUTPUT)
-# Call `make test` to run the unit test application
-#test:$(TEST_NAME)
-#	./$(TEST_OUTPUT)
-	
+
 # Remove all the built files, invoke by `make clean`
 clean:
 	rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)
