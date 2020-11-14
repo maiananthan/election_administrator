@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include <conio.h>
 #include <unistd.h>
 
 FILE *fileptr;

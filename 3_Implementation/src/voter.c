@@ -213,7 +213,7 @@ void votersfun()
                 }
                 fclose(fileptr1);
                 printf("Enter the candidate username you wish to vote:\n");
-                scanf("%s",&votervote);
+                scanf("%s",votervote);
                 status=polling(cloginun,votervote);
 
                 if(status==2)

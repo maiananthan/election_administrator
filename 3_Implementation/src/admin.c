@@ -213,9 +213,9 @@ void adminfun()
             {
                 addvoterfun:
                 printf("Enter voter username : ");
-                scanf("%s",&loginunarg);
+                scanf("%s",loginunarg);
                 printf("Enter voter password : ");
-                scanf("%s",&loginpwarg);
+                scanf("%s",loginpwarg);
                 status=addvoter(loginunarg,loginpwarg);
                 if(status==1)
                     {printf("\nVOTER ADDED TO THE DATABASE SUCCESSFULLY\n\n");
