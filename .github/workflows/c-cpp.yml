@@ -2,9 +2,9 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -13,10 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+      
+    - name: make all | run
+      run: make all -C 3_Implementatiion/
