@@ -1,18 +1,14 @@
 name: C/C++ CI
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 jobs:
   build:
-
+    name: C/C++ CI
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
       
-    - name: make all | run
+    - name: make all
       run: make all -C 3_Implementatiion/
