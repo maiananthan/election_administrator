@@ -14,9 +14,9 @@ int main()
     printf("\n   Welcome to the election system   ");                               
     loginpage:
     printf("\n\n     - - - - - LOGIN - - - - -    \n\n Enter your User Name : ");
-    scanf("%s",&loginun);
+    scanf("%s",loginun);
     printf(" Enter Password       : ");
-    scanf("%s",&loginpw);                                  
+    scanf("%s",loginpw);                                  
     if(status=logincheck(loginun,loginpw))
     {
         printf("\n         LOGIN SUCCESSFULL   \n\n");
